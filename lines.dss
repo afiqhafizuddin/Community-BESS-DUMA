@@ -1,0 +1,77 @@
+! Line Codes
+New Linecode.A11UG185 nphases=3 R1=0.20 X1=0.08 R0=2.39 X0=0.04 Units=km
+New Linecode.USER nphases=3 R1=0.15 X1=0.61 R0=0.36 X0=2.00 Units=km
+New Linecode.A11UG240X nphases=3 R1=0.16 X1=0.15 R0=0.18 X0=0.03 Units=km
+New Linecode.A11UG300 nphases=3 R1=0.12 X1=0.08 R0=1.78 X0=0.04 Units=km
+New Linecode.A11UG500X nphases=3 R1=0.08 X1=0.09 R0=1.04 X0=0.03 Units=km
+
+// LINE DEFINITIONS 
+
+! Feeder 1
+// New Line.LINE1  bus1=PPU_DUMA_11kV  bus2=PPU_DUMA_VCB1 Linecode=A11UG240X  phases=3  length=0.01  units=km
+
+! FEEDER 2
+New Object=Line.LINE2 bus1=PPU_DUMA_11kV bus2=RPPLNGI2 Linecode=A11UG240X Length=1 Units=km
+New Object=Line.LINE3 bus1=RPPLNGI2 bus2=PDTJLNMASJID Linecode=A11UG240X Length=1 Units=km
+New Object=Line.LINE4 bus1=PDTJLNMASJID bus2=BELLA Linecode=A11UG240X Length=1 Units=km
+New Object=Line.LINE5 bus1=BELLA bus2=PSTPDGN Linecode=A11UG240X Length=1 Units=km
+
+! FEEDER 3
+New Object=Line.LINE6 bus1=PPU_DUMA_11kV bus2=PAMDRA Linecode=A11UG240X Length=0.1 Units=km
+New Object=Line.LINE7 bus1=PAMDRA bus2=DUMA4 Linecode=A11UG300 Length=0.6 Units=km
+New Object=Line.LINE8 bus1=DUMA4 bus2=PLSDRA Linecode=A11UG185 Length=1.2 Units=km
+New Object=Line.LINE9 bus1=SSU_UPTWRES_IR1 bus2=PLSDRA Linecode=A11UG240X Length=0.5 Units=km
+
+! FEEDER 4
+New Object=Line.LINE10 bus1=PPU_DUMA_11kV bus2=ATRIA_1 Linecode=A11UG240X Length=2.7 Units=km
+New Object=Line.LINE11 bus1=ATRIA_1 bus2=HAWKER Linecode=USER Length=1 Units=km
+
+! FEEDER 5
+New Object=Line.LINE12 bus1=PPU_DUMA_11kV bus2=PRMTE Linecode=A11UG500X Length=2.4 Units=km
+New Object=Line.LINE13 bus1=PRMTE  bus2=PRMTA Linecode=A11UG240X Length=0.3  Units=km
+New Object=Line.LINE14 bus1=PRMTA bus2=PMONTB Linecode=A11UG185 Length=0.38 Units=km
+
+! FEEDER 6 
+New Object=Line.LINE15 bus1=PPU_DUMA_11kV bus2=DUMA7 Linecode=A11UG240X Length=0.3 Units=km
+New Object=Line.LINE16 bus1=DUMA7 bus2=HAUS Linecode=A11UG185 Length=0.6 Units=km
+New Object=Line.LINE17 bus1=HAUS bus2=DUMA6 Linecode=A11UG185 Length=2.2 Units=km
+New Object=Line.LINE18 bus1=DUMA6 bus2=DUMA13 Linecode=A11UG185 Length=3 Units=km
+New Object=Line.LINE19 bus1=DUMA13 bus2=SSU_DUMA5_IM2 Linecode=A11UG240X Length=1 Units=km
+
+! FEEDER 7
+New Object=Line.LINE20 bus1=PPU_DUMA_11kV bus2=PLNGI_B Linecode=A11UG240X Length=1 Units=km
+New Object=Line.LINE21 bus1=PLNGI_B bus2=PLNGI_D Linecode=A11UG240X Length=1 Units=km
+
+! FEEDER 8
+New Object=Line.LINE22 bus1=PPU_DUMA_11kV bus2=PDTLITRAK Linecode=A11UG240X Length=2 Units=km
+New Object=Line.LINE23 bus1=PDTLITRAK bus2=DUMA12 Linecode=A11UG240X Length=1 Units=km
+New Object=Line.LINE24 bus1=DUMA12 bus2=TMNGH4 Linecode=A11UG185 Length=1 Units=km
+New Object=Line.LINE25 bus1=TMNGH4 bus2=SSU_TMEGAH3_IR1 Linecode=A11UG185 Length=0.6 Units=km
+New Object=Line.LINE26 bus1=TMNGH2 bus2=SSU_TMEGAH3_IR1 Linecode=A11UG185 Length=0.52 Units=km
+
+! FEEDER 9
+New Object=Line.LINE27 bus1=PPU_DUMA_11kV bus2=SPRK9 Linecode=A11UG240X Length=3 Units=km
+New Object=Line.LINE28 bus1=SPRK9 bus2=BOMBA Linecode=A11UG185 Length=0.2 Units=km
+New Object=Line.LINE29 bus1=BOMBA bus2=SPRK8 Linecode=A11UG185 Length=1 Units=km
+
+! FEEDER 10
+New Object=Line.LINE30 bus1=PPU_DUMA_11kV bus2=SSU_UPTWRES_IM2 Linecode=A11UG500X Length=1 Units=km
+New Object=Line.LINE31 bus1=SSU_UPTWRES_IM2 bus2=MAYBANK Linecode=A11UG240X Length=1 Units=km
+New Object=Line.LINE32 bus1=MAYBANK bus2=DUMA8 Linecode=A11UG185 Length=0.3 Units=km
+
+
+! FEEDER 11
+New Object=Line.LINE33 bus1=SSU_DSARCNTR_IR1 bus2=PPU_DUMA_11kV Linecode=A11UG240X Length=1 Units=km
+
+! FEEDER 12
+New Object=Line.LINE34 bus1=PPU_DUMA_11kV bus2=DUMA9 Linecode=A11UG240X Length=2.3 Units=km
+New Object=Line.LINE35 bus1=DUMA9 bus2=DUMA1 Linecode=A11UG240X Length=1.4 Units=km
+New Object=Line.LINE36 bus1=DUMA1 bus2=ELITE Linecode=A11UG240X Length=1 Units=km
+
+! FEEDER 13
+New Object=Line.LINE37 bus1=PPU_DUMA_11kV bus2=DUMA10 Linecode=A11UG240X Length=2.4 Units=km
+New Object=Line.LINE38 bus1=DUMA10 bus2=BALAIPOLIS Linecode=A11UG240X Length=0.05 Units=km
+
+
+//  New Object=Line.LINE31 bus1=SSU_DUMA5_R11kV bus2=SSU_DUMA5_M11kV    Linecode=A11UG240X Length=0.01 Units=km
+// New Object=Line.LINE39 bus1=MAYBANK bus2=DUMA8 Linecode=A11UG185 Length=0.3 Units=km

@@ -1,0 +1,66 @@
+! LOAD DEFINTIONS
+
+! FEEDER 1 
+// New Object=Load.LOAD1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kW=85 kvar=366 PF=0.89
+
+! FEEDER 2
+New Load.LOAD2 bus1=RPPLNGI2 phases=3 kV=11 kW=732 kvar=366 PF=0.89
+New Load.LOAD3 bus1=PSTPDGN phases=3 kV=11 kW=732 kvar=366 pf=0.89
+New Load.LOAD5 bus1=BELLA phases=3 kV=11 kW=732 kvar=366 PF=0.89
+New Load.LOAD4 bus1=PDTJLNMASJID phases=3  kV=11  kW=732 kvar=366  pf=0.89
+
+! FEEDER 3
+New Load.LOAD6 bus1=PAMDRA phases=3 kV=11 kW=170 kvar=85 PF=0.89
+New Load.LOAD7 bus1=DUMA4 phases=3 kV=11 kW=170 kvar=85 PF=0.89
+New Load.LOAD8 bus1=PLSDRA phases=3 kV=11 kW=170 kvar=85 PF=0.89
+New Load.LOAD9 bus1=SSU_UPTWRES_IR1 phases=3 kV=11 kW=880 kvar=440 PF=0.89 ! Branch Node
+
+! FEEDER 4
+New Load.LOAD10 bus1=ATRIA_1 phases=3 kV=11 kW=647 kvar=324 PF=0.89
+New Load.LOAD11 bus1=HAWKER phases=3 kV=11 kW=255 kvar=128 PF=0.89
+
+! FEEDER 5 
+New Load.LOAD12 bus1=PRMTE phases=3 kV=11 kW=1265 kvar=633 PF=0.89
+New Load.LOAD13 bus1=PRMTA phases=3 kV=11 kW=1365 kvar=633 PF=0.89
+New Load.LOAD14 bus1=PMONTB phases=3 kV=11 kW=718 kvar=359 PF=0.89
+
+! FEEDER 6
+New Load.LOAD15 bus1=DUMA7 phases=3 kV=11 kW=1110 kvar=555 PF=0.89
+New Load.LOAD16 bus1=HAUS phases=3 kV=11 kW=472 kvar=236 PF=0.89
+New Load.LOAD17 bus1=DUMA6 phases=3 kV=11 kW=472 kvar=236 PF=0.89
+New Load.LOAD18 bus1=DUMA13 phases=3 kV=11 kW=116 kvar=58 PF=0.89 ! Branch Node 
+New Load.LOAD19 bus1=SSU_DUMA5_M11kV phases=3 kV=11 kW=472 kvar=236 PF=0.89
+
+
+! FEEDER 7
+New Load.LOAD20 bus1=PLNGI_B phases=3 kV=11 kW=435 kvar=217 PF=0.89
+New Load.LOAD21 bus1=PLNGI_D phases=3 kV=11 kW=51 kvar=25 PF=0.89
+
+! FEEDER 8
+New Load.LOAD22 bus1=PDTLITRAK phases=3 kV=11 kW=389 kvar=195 PF=0.89
+New Load.LOAD23 bus1=DUMA12 phases=3 kV=11 kW=389 kvar=195 PF=0.89
+New Load.LOAD24 bus1=TMNGH4 phases=3 kV=11 kW=389 kvar=195 PF=0.89
+New Load.LOAD25 bus1=SSU_TMEGAH3_IR1 phases=3 kV=11 kW=292 kvar=146 PF=0.89
+New Load.LOAD26 bus1=TMNGH2 phases=3 kV=11 kW=567 kvar=283 PF=0.89
+
+! FEEDER 9
+New Load.LOAD27 bus1=SPRK9 phases=3 kV=11 kW=834 kvar=417 PF=0.89
+New Load.LOAD28 bus1=BOMBA phases=3 kV=11 kW=834 kvar=417 PF=0.89
+New Load.LOAD29 bus1=SPRK8 phases=3 kV=11 kW=834 kvar=417 PF=0.89
+
+! FEEDER 10
+New Load.LOAD30 bus1=SSU_UPTWRES_IM2 phases=3 kV=11 kW=1373 kvar=686 PF=0.89
+New Load.LOAD31 bus1=MAYBANK phases=3 kV=11 kW=306 kvar=153 PF=0.89
+New Load.LOAD32 bus1=DUMA8 phases=3 kV=11 kW=323 kvar=162 PF=0.89
+
+! FEEDER 11
+New Load.LOAD33 bus1=SSU_DSARCNTR_IR1 phases=3 kV=11 kW=148 kvar=74 PF=0.89
+
+! FEEDER 12
+New Load.LOAD34 bus1=DUMA9 phases=3 kV=11 kW=580 kvar=290 PF=0.89
+New Load.LOAD35 bus1=DUMA1 phases=3 kV=11 kW=580 kvar=290 PF=0.89
+New Load.LOAD36 bus1=ELITE phases=3 kV=11 kW=580 kvar=290 PF=0.89
+
+! FEEDER 13
+New Load.LOAD37 bus1=DUMA10 phases=3 kV=11 kW=358 kvar=179 PF=0.89
+New Load.LOAD38 bus1=BALAIPOLIS phases=3 kV=11 kW=358 kvar=179 PF=0.89   

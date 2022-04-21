@@ -1,0 +1,1 @@
+New Storage.Bat1 phases=3 Bus1=DUMA13 kV=11.3 kW=500 kWRated=500 kWhRated=1500  %stored =80  pf=1 dispmode=EXTERNAL %discharge=50 %charge=50  %IdlingkW=0  %reserve=20  
