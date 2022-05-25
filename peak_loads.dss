@@ -1,4 +1,5 @@
 ! LOAD DEFINTIONS
+New Loadshape.daily_load npts=2881  minterval=1 mult=(File=two_day_daily_load.txt)
 
 ! FEEDER 1 
 // New Object=Load.LOAD1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kW=85 kvar=366 PF=0.89
@@ -64,3 +65,7 @@ New Load.LOAD36 bus1=ELITE phases=3 kV=11 kW=580 kvar=290 PF=0.89
 ! FEEDER 13
 New Load.LOAD37 bus1=DUMA10 phases=3 kV=11 kW=358 kvar=179 PF=0.89
 New Load.LOAD38 bus1=BALAIPOLIS phases=3 kV=11 kW=358 kvar=179 PF=0.89   
+
+// daily load
+BatchEdit Load.. daily = daily_load
+Batchedit Load..* Vminpu=0.95
