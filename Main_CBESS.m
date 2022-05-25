@@ -110,11 +110,11 @@ for j=1:LS-1
         CHA_stop(j,1)=j;
     end
 end
-    CHA_start (CHA_start==0)  =[];
-    CHA_stop (CHA_stop==0) = [];
 
+CHA_start(CHA_start==0)=[];
+CHA_stop(CHA_stop==0)=[];
 
-%discharging time
+% discharging time
 for j=1:LS-1
     if P_Gen_extract(j,1)==0 && P_Gen_extract(j+1,1)>0
         DISCHA_stop(j,1)=j;
