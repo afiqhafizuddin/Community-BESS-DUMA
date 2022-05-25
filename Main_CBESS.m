@@ -2,7 +2,7 @@ clc
 clear all
 close all;
 
-% Loading daily load patteren
+% Loading daily load pattern
 fileID = fopen('two_day_daily_load.txt','r');
 formatSpec = '%f';
 Loadshape_data = fscanf(fileID,formatSpec);
@@ -15,6 +15,10 @@ Solarshape = fscanf(fileID,formatSpec);
 
 %Variable declaration
 R_charge=zeros(LS,1);
+CHA_start=zeros(LS,1);
+CHA_stop=zeros(LS,1);
+DISCHA_start=zeros(LS,1); 
+DISCHA_stop=zeros(LS,1);
 
 % Activating the openDSS simulation platform
 DSSObj = actxserver('OpenDSSEngine.DSS');
@@ -25,7 +29,7 @@ DSSSolution=DSSCircuit.Solution;
 DSSActiveClass = DSSCircuit.ActiveClass;
 
 % Redirecting masters to MATLAB script.
-DSSText.command='Compile (C:\Users\Afiq Hafizuddin\Documents\MATLAB\BESS-guide\Community_BESS\master.dss)';
+DSSText.command='Compile (C:\Users\Afiq Hafizuddin\Documents\MATLAB\BESS-guide\01_Community_BESS\master.dss)';
 
 % Load Flow of the base system
 % Setting the solving mode to Daily
@@ -96,13 +100,14 @@ figure(2)
 plot(time,Voltage')
 hold on;
 plot([0 48],[1.05 1.05],'r:','Linewidth',1.5);
+plot([0 48],[0.95 0.95],'r:','Linewidth',1.5);
 ylabel('Voltage (p.u.)');
 xlabel('Time (hr)');
 xticks([0:4:48]);
 xlim([0 48]);
 ylim([0.94 1.06]);
 
-%charging time
+% charging time
 for j=1:LS-1
     if Excess_P_Gen(j,1)<0 && Excess_P_Gen(j+1,1)>0
         CHA_start(j,1)=j+1;
@@ -117,14 +122,16 @@ CHA_stop(CHA_stop==0)=[];
 % discharging time
 for j=1:LS-1
     if P_Gen_extract(j,1)==0 && P_Gen_extract(j+1,1)>0
-        DISCHA_stop(j,1)=j;
+        % DISCHA_stop(j,1)=j;
+        DISCHA_stop (j, 1) = j;
     elseif P_Gen_extract(j,1)>0 && P_Gen_extract(j+1,1)==0
-        DISCHA_start(j,1)=j+1;
+        % DISCHA_start(j,1)=j+1;
+        DISCHA_start(j,1) = j + 1;
     end
 end
 
-DISCHA_start(DISCHA_start==0)=[];
-DISCHA_stop(DISCHA_stop==0)=[];
+DISCHA_start(DISCHA_start==0) = [];
+DISCHA_stop(DISCHA_stop==0) = [];
 
 % Load Flow with a battery
 SOC_final = 0.83;
@@ -137,20 +144,20 @@ DSSText.Command='Redirect CBESS.dss'
 DSSCircuit.SetActiveClass('Storage');
 AllStorageNames = DSSActiveClass.AllNames;
 
-%charging times
-C1=CHA_start(1,1); C2=CHA_stop(1,1); C3=CHA_start(2,1); C4=CHA_stop(2,1);
+% charging times
+C1 =CHA_start(1,1); C2=CHA_stop(1,1); C3=CHA_start(2,1); C4=CHA_stop(2,1);
 
-%discharging times
-D1=DISCHA_stop(1,1); D2=DISCHA_start(1,1); D3=DISCHA_stop(2,1); D4=DISCHA_start(2,1); 
+% discharging times
+D1=DISCHA_stop(1,1); D2=DISCHA_start(1,1); D3=DISCHA_stop(1,1); D4=DISCHA_start(1,1); 
 
 %stored energy
 SE = 0.8;
 %%
 %CBESS
-RB=1; %no. of batteries
+RB=1; % no. of batteries
 
 BESS_kWh=1500*60;
-BESS_kW=500;
+BESS_kW=1000;
 %%
 %initial charging and discharging rate
 for k = 1:RB
@@ -165,7 +172,7 @@ for g = 1:RB
 end
 
 
-%run with CBESS
+% Run with CBESS
 % Setting the solving mode to Daily
 % Activation of daily mode
 DSSText.Command='Set VoltageBases = "[33 11.3]"';
@@ -180,9 +187,9 @@ for h=1:LS
     Voltagebat(:,h)=DSSCircuit.AllNodeVmagPUByPhase(1)';
     Voltagecus=Voltagebat([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end],:);
     Loss = DSSCircuit.Losses;
-    TPLbat(h,1)=Loss(1,1)/1000; %to convert to kW
+    TPLbat(h,1)=Loss(1,1)/1000; % to convert to kW
     
-    %Extract grid power demand
+    % Extract grid power demand
     
     DSSCircuit.SetActiveElement(['Transformer.TX1']);
     Source_with_bat(h,:) = DSSCircuit.ActiveCktElement.Powers;
@@ -206,8 +213,8 @@ for h=1:LS
         bat_power(h,g)=-1*(bp(h,1)+bp(h,3)+bp(h,5));
     end
     
-    %check and claculate the status
-    %charging
+    % check and claculate the status
+    % charging
     if P_Gen_extract(h+1,1)>0
         if Excess(h+1)>0
             if h>=C1-1 && h<=C2-1
@@ -321,8 +328,6 @@ for h=1:LS
     end
 end
 
-
-
 figure(3)
 plot(time,Voltagecus')
 hold on;
@@ -353,7 +358,7 @@ xlabel('Time (hr)')
 ylabel('SoC (%)')
 ylim([0 100]);
 
-figure();
+figure(6);
 plot(time,TPLbase,'--','Color','[0 0.4 1]','LineWidth',1);
 hold on;
 plot(time,TPLbat,'-','Color','[1 0 0.8]','LineWidth',1);
