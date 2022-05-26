@@ -116,8 +116,8 @@ for j=1:LS-1
     end
 end
 
-CHA_start(CHA_start==0)=[];
-CHA_stop(CHA_stop==0)=[];
+CHA_start(CHA_start==0)=[1];
+CHA_stop(CHA_stop==0)=[1];
 
 % discharging time
 for j=1:LS-1
@@ -130,8 +130,8 @@ for j=1:LS-1
     end
 end
 
-DISCHA_start(DISCHA_start==0) = [];
-DISCHA_stop(DISCHA_stop==0) = [];
+DISCHA_start(DISCHA_start==0) = [1];
+DISCHA_stop(DISCHA_stop==0) = [1];
 
 % Load Flow with a battery
 SOC_final = 0.83;
@@ -332,6 +332,7 @@ figure(3)
 plot(time,Voltagecus')
 hold on;
 plot([0 48],[1.05 1.05],'r:','Linewidth',1.5);
+plot([0 48],[0.95 0.95],'r:','Linewidth',1.5);
 ylabel('Voltage (p.u.)');
 xlabel('Time (hr)');
 xticks([0:4:48]);
