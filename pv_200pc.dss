@@ -2,7 +2,7 @@
 New Loadshape.solar npts=2881  minterval=1  mult=(file=two_day_daily_solar_sunny.txt)
 
 ! FEEDER 1
-// New PVSystem.PV1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kVA=500 Pmpp=500 irrad=1 PF=1 %cutin=0.1 %cutout=0.1 
+New PVSystem.PV1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kVA=500 Pmpp=500 irrad=1 PF=1 %cutin=0.1 %cutout=0.1 
 // 
 ! FEEDER 2
 New PVSystem.PV2 bus1=RPPLNGI2 phases=3 kV=11 kVA=500 Pmpp=500 irrad=1 PF=1 %cutin=0.1 %cutout=0.1

@@ -8,7 +8,7 @@ New Linecode.A11UG500X nphases=3 R1=0.08 X1=0.09 R0=1.04 X0=0.03 Units=km
 // LINE DEFINITIONS 
 
 ! Feeder 1
-// New Line.LINE1  bus1=PPU_DUMA_11kV  bus2=PPU_DUMA_VCB1 Linecode=A11UG240X  phases=3  length=0.01  units=km
+New Line.LINE1  bus1=PPU_DUMA_11kV  bus2=PPU_DUMA_VCB1 Linecode=A11UG240X  phases=3  length=0.01  units=km
 
 ! FEEDER 2
 New Object=Line.LINE2 bus1=PPU_DUMA_11kV bus2=RPPLNGI2 Linecode=A11UG240X Length=1 Units=km
