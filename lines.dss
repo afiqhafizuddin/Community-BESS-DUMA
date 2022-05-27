@@ -4,7 +4,6 @@ New Linecode.USER nphases=3 R1=0.15 X1=0.61 R0=0.36 X0=2.00 Units=km
 New Linecode.A11UG240X nphases=3 R1=0.16 X1=0.15 R0=0.18 X0=0.03 Units=km
 New Linecode.A11UG300 nphases=3 R1=0.12 X1=0.08 R0=1.78 X0=0.04 Units=km
 New Linecode.A11UG500X nphases=3 R1=0.08 X1=0.09 R0=1.04 X0=0.03 Units=km
-
 // LINE DEFINITIONS 
 
 ! Feeder 1

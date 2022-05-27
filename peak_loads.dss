@@ -42,7 +42,7 @@ New Load.LOAD22 bus1=PDTLITRAK phases=3 kV=11 kW=389 kvar=195 PF=0.89
 New Load.LOAD23 bus1=DUMA12 phases=3 kV=11 kW=389 kvar=195 PF=0.89
 New Load.LOAD24 bus1=TMNGH4 phases=3 kV=11 kW=389 kvar=195 PF=0.89
 New Load.LOAD25 bus1=SSU_TMEGAH3_IR1 phases=3 kV=11 kW=292 kvar=146 PF=0.89
-New Load.LOAD26 bus1=TMNGH2 phases=3 kV=11 kW=567 kvar=283 PF=0.89
+// New Load.LOAD26 bus1=TMNGH2 phases=3 kV=11 kW=567 kvar=283 PF=0.89
 
 ! FEEDER 9
 New Load.LOAD27 bus1=SPRK9 phases=3 kV=11 kW=834 kvar=417 PF=0.89
