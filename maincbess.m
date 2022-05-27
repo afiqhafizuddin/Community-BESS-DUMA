@@ -59,6 +59,7 @@ for i = 1:LS
     Tr_power(i,2) = 1*(Source(i,1)+Source(i,3)+Source(i,5));
 
     Grid_power_woB(i,1)=Tr_power(i,1);
+    Grid_power_woB(i,2)=Tr_power(i,2);
 
     % PV Power Extraction
     [P_Gen] = solarextraction(i,DSSObj,DSSText,DSSCircuit,DSSSolution);
@@ -76,7 +77,8 @@ end
 
 
 Excess = sum(Excess_P_Gen);
-Voltagecusbefore=Voltagebase([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end],:);
+% Voltagecusbefore=Voltagebase([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end],:);
+Voltage=Voltagebase([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end],:);
 
 P_Gen_extract(LS+1, 1) = 0;
 
@@ -94,7 +96,7 @@ ylim([0 1.1]);
 legend('Solar Profile', 'Load Profile', 'NumColumns', 2);
 
 figure(2)
-plot(time, Voltagecusbefore);
+plot(time, Voltage);
 hold on;
 plot([0 48], [1.05 1.05], 'r:', 'Linewidth', 1.5);
 plot([0 48], [0.95 0.95], 'r:', 'Linewidth', 1.5);
@@ -135,6 +137,7 @@ SOC_end=0.5;
 
 % Redirecting OpenDSS Battery File
 DSSText.command = 'Redirect CBESS.dss'
+
 DSSCircuit.SetActiveClass('Storage');
 AllStorageNames = DSSActiveClass.AllNames;
 
@@ -171,11 +174,12 @@ DSSText.command='Set MaxControlIter=1000';
 DSSText.command='set mode=daily stepsize=1m';
 DSSText.Command = 'Set number=1';
 
-for h=1:LS
+for h = 1:LS
     h;
-    DSSText.command = 'Solve';
+    DSSText.command = 'solve';
     Voltagebat(:,h) = DSSCircuit.AllNodeVmagPUByPhase(1);
-    Voltagecusbefore = Voltagebase ([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end]);
+    
+    Voltagecus = Voltagebase ([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end]);
 
     Loss=DSSCircuit.Losses;
     TPLbat(h,1) = Loss(1,1)/1000; 
@@ -189,6 +193,7 @@ for h=1:LS
     Tr_power_with_bat(h,2) = 1*(Source_with_bat(h,1)+Source_with_bat(h,3)+Source_with_bat(h,5));
 
     Grid_power_wB(h,1)=Tr_power_with_bat(h,1);
+    Grid_power_wB(h,2)=Tr_power_with_bat(h,2);
 
     % Extract SOC
     DSSCircuit.SetActiveClass('Storage');
@@ -205,14 +210,14 @@ for h=1:LS
     % Check the status and calculate
 
     % Charging
+
     if P_Gen_extract(h+1,1)>0
         if Excess(h+1)>0
-            if h>=C1-1 && h<=C2-1
+            if h >= C1-1 && h<=C2-1
                 for k = 1:RB
                     R_charge(h+1,k) = (((SOC_final-SOC(h,k))*BESS_kWh/(C2-h))/BESS_kW)*100;
                     R_test(h+1,k)=R_charge(h+1,k);
                 end
-
                 % Excess PV Rate
                 for k = 1:RB
                     E_PV(h+1,k) = (Excess(k,h+1)/BESS_kW)*100;
@@ -319,7 +324,7 @@ for h=1:LS
 end
 
 figure(3)
-plot(time,Voltagecus')
+plot(time, Voltagecus')
 hold on;
 plot([0 48],[1.05 1.05],'r:','Linewidth',1.5);
 plot([0 48],[0.95 0.95],'r:','Linewidth',1.5);
