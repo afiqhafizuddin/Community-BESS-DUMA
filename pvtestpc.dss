@@ -1,0 +1,67 @@
+! PV DEFINTIONS
+New XYCurve.MyPVSyst npts=4 xarray=[0 25 50 75 100] yarray=[1.2 1.0 0.8 0.6]
+New XYCurve.MyEff npts=4 xarray=[0.1 0.2 0.4 1.0] yarray=[0.86 0.9 0.93 0.97]
+
+! FEEDER 1
+New PVSystem.PV1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1 
+// 
+! FEEDER 2
+New PVSystem.PV2 bus1=RPPLNGI2 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV3 bus1=PSTPDGN phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV4 bus1=PDTJLNMASJID phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV5 bus1=BELLA phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 3
+New PVSystem.PV6 bus1=PAMDRA phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV7 bus1=DUMA4 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV8 bus1=PLSDRA phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV9 bus1=SSU_UPTWRES_IR1 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 4
+New PVSystem.PV10 bus1=ATRIA_1 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV11 bus1=HAWKER phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 5
+New PVSystem.PV12 bus1=PRMTE phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV13 bus1=PRMTA phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV14 bus1=PMONTB phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 6
+New PVSystem.PV15 bus1=DUMA7 phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV16 bus1=HAUS phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV17 bus1=DUMA6 phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV18 bus1=DUMA13 phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV19 bus1=SSU_DUMA5_IM2 phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 7
+New PVSystem.PV20 bus1=PLNGI_B phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV21 bus1=PLNGI_D phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 8
+New PVSystem.PV22 bus1=PDTLITRAK phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV23 bus1=DUMA12 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV24 bus1=TMNGH4 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV25 bus1=SSU_TMEGAH3_IR1 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV26 bus1=TMNGH2 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDEER 9
+New PVSystem.PV27 bus1=SPRK9 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV28 bus1=BOMBA phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV29 bus1=SPRK8 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 10
+New PVSystem.PV30 bus1=SSU_UPTWRES_IM2 phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV31 bus1=MAYBANK phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV32 bus1=DUMA8 phases=3 kV=11 kVA=1500  Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 11
+New PVSystem.PV33 bus1=SSU_DSARCNTR_IR1 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 12
+New PVSystem.PV34 bus1=DUMA9 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV35 bus1=DUMA1 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV36 bus1=ELITE phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+
+! FEEDER 13
+New PVSystem.PV37 bus1=DUMA10 phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1
+New PVSystem.PV38 bus1=BALAIPOLIS phases=3 kV=11 kVA=1500 Pmpp=1500 irrad=1 PF=1

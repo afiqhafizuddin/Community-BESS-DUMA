@@ -1,0 +1,64 @@
+! FEEDER 1 
+New Storage.Bat1 phases=3 bus1=PPU_DUMA_VCB1  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 2
+New Storage.Bat2 phases=3 bus1=RPPLNGI2  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat3 phases=3 bus1=PSTPDGN  kV=11 kW=500 kWRated=500 kWhRated=1500 pf=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat4 phases=3 bus1=BELLA  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat5 phases=3 bus1=PDTJLNMASJID   kV=11  kW=500 kWRated=500 kWhRated=1500  pf=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 3
+New Storage.Bat6 phases=3 bus1=PAMDRA  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat7 phases=3 bus1=DUMA4  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat8 phases=3 bus1=PLSDRA  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat9 phases=3 bus1=SSU_UPTWRES_IR1  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20 ! Branch Node
+
+! FEEDER 4
+New Storage.Bat10 phases=3 bus1=ATRIA_1  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat11 phases=3 bus1=HAWKER  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 5 
+New Storage.Bat12 phases=3 bus1=PRMTE  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat13 phases=3 bus1=PRMTA  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat14 phases=3 bus1=PMONTB  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 6
+New Storage.Bat15 phases=3 bus1=DUMA7  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat16 phases=3 bus1=HAUS  kW=500 kWRated=500 kWhRated=1500 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20.89
+New Storage.Bat17 phases=3 bus1=DUMA6  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat18 phases=3 bus1=DUMA13  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20 ! Branch Node 
+New Storage.Bat19 phases=3 bus1=SSU_DUMA5_M11kV  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+
+! FEEDER 7
+New Storage.Bat20 phases=3 bus1=PLNGI_B  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat21 phases=3 bus1=PLNGI_D  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 8
+New Storage.Bat22 phases=3 bus1=PDTLITRAK  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat23 phases=3 bus1=DUMA12  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat24 phases=3 bus1=TMNGH4  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat25 phases=3 bus1=SSU_TMEGAH3_IR1  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat26 phases=3 bus1=TMNGH2  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 9
+New Storage.Bat27 phases=3 bus1=SPRK9  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat28 phases=3 bus1=BOMBA  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat29 phases=3 bus1=SPRK8  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 10
+New Storage.Bat30 phases=3 bus1=SSU_UPTWRES_IM2  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat31 phases=3 bus1=MAYBANK  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat32 phases=3 bus1=DUMA8  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 11
+New Storage.Bat33 phases=3 bus1=SSU_DSARCNTR_IR1  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 12
+New Storage.Bat34 phases=3 bus1=DUMA9  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat35 phases=3 bus1=DUMA1  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat36 phases=3 bus1=ELITE  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+
+! FEEDER 13
+New Storage.Bat37 phases=3 bus1=DUMA10  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20
+New Storage.Bat38 phases=3 bus1=BALAIPOLIS  kV=11 kW=500 kWRated=500 kWhRated=1500 PF=1 dispmode=EXTERNAL %discharge=50 %charge=50 %IdlingkW=0 %reserve=20   
