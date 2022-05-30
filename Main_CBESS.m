@@ -3,12 +3,19 @@ clear all
 close all;
 
 % Loading daily load pattern
-fileID = fopen('two_day_daily_load.txt','r');
+% fileID = fopen('two_day_daily_load_commercial.txt','r');
+% formatSpec = '%f';
+% Loadshape_data1 = fscanf(fileID,formatSpec);
+% LS = length(Loadshape_data1);
+
+% Loading daily load pattern (residential)
+fileID = fopen('two_day_daily_load_residential.txt','r');
 formatSpec = '%f';
 Loadshape_data = fscanf(fileID,formatSpec);
 LS = length(Loadshape_data);
 
-% Loading daily solar patteren
+
+% Loading daily solar pattern
 fileID = fopen('two_day_daily_solar_sunny.txt','r');
 formatSpec = '%f';
 Solarshape = fscanf(fileID,formatSpec);
@@ -54,10 +61,11 @@ DSSText.Command = 'Set number=1';
     This is without the integration of CBESS
 %}
 
-for i  = 1:LS
+for i  = 1:LS % Voltage before
     DSSText.command = 'solve';
     Voltagebase(:,i)=DSSCircuit.AllNodeVmagPUByPhase(1)';
-    Voltagecusbefore=Voltagebase([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end],:); % Before Integration of CBESS 
+    Voltagecusbefore=Voltagebase([2:5, 6:9, 10:11, 12:14, 15:19, 20:21, 22:26, 27:29, 30:32, 33, 34:36, 37:end],:);
+     % Before Integration of CBESS 
     Loss = DSSCircuit.Losses;
     TPLbase(i,1)=Loss(1,1)/1000; % To convert to kW
     
@@ -97,12 +105,13 @@ P_Gen_extract(LS+1 , 1)= 0;
 
    Figure 1: Solar PV Profile and Load Flow Profile
    Figure 2: Voltage Profile before Integrating the CBESS
+
 %}
 
 
 time= 0:(1/(60)):48;  % Time for 2 Days Period
 figure(1)
-plot(time,Solarshape,'r-')
+plot(time,Solarshape,'r-') % Solar Profile Plot
 hold on;
 plot(time,Loadshape_data,'b--')
 ylabel('Normalized Profile (p.u.)');
@@ -123,7 +132,7 @@ xticks([0:4:48]);
 xlim([0 48]);
 ylim([0.94 1.06]);
 
-% --------------------------------CBESS INTEGRATION ----------------------------------------------------------------- %
+% -------------------------------- CBESS INTEGRATION ----------------------------------------------------------------- %
 %{
 CBESS Operation Definition
 Charging: When the voltage is violating the upper voltage limit
@@ -131,8 +140,9 @@ Discharging: When the voltage is violating the upper voltage limit
 %}
 
 % Charging time
-for j=1:LS-1
-    if Excess_P_Gen(j,1)<0 && Excess_P_Gen(j+1,1)>0
+
+for j=1:LS-1 % J = From Load 1 till the second last Load 
+    if Excess_P_Gen(j,1) < 0 && Excess_P_Gen(j+1,1) > 0
         CHA_start(j,1)=j+1;
     elseif Excess_P_Gen(j,1)>0 && Excess_P_Gen(j+1,1)<0
         CHA_stop(j,1)=j;
@@ -161,6 +171,7 @@ SOC_end = 0.5
 
 % Redirecting opendss battery file
 DSSText.Command='Redirect CBESS.dss'
+% DSSText.Command='Redirect RBESS_1500.dss'
 
 DSSCircuit.SetActiveClass('Storage');
 AllStorageNames = DSSActiveClass.AllNames;
@@ -171,7 +182,7 @@ C1=CHA_start(1,1); C2=CHA_stop(1,1); C3=CHA_start(2,1); C4=CHA_stop(2,1);
 % discharging times
 D1=DISCHA_stop(1,1); D2=DISCHA_start(1,1); D3=DISCHA_stop(1,1); D4=DISCHA_start(1,1); 
 
-% Sored energy
+% Stored energy
 SE = 0.8;
 % CBESS
 RB=1; % no. of batteries
@@ -346,7 +357,6 @@ for h = 1:LS
                 DSSText.command=['Edit Storage.',AllStorageNames{g} ' State = DISCHARGING'];
                 DSSText.command=['Edit Storage.',AllStorageNames{g} ' %discharge=',num2str(R_discharge(h+1,g))];
             end
-            
         end
     end
 end
@@ -397,4 +407,4 @@ xticks([0:4:48]);
 xlim([0 48]);
 xlabel('Time (hr)')
 ylabel('Loss (kW)')
-legend('Without CBESS', 'with CBESS','FontSize',8);
+legend('Without CBESS', 'with CBESS','FontSize', 8);
