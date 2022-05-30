@@ -1,0 +1,2 @@
+New Transformer.TX1 Buses=[PPU_DUMA_33kV, PPU_DUMA_11kV_A] Conns=[Delta Wye] kVs=[33 11.3] kVAs=[30000 30000] XHL=10
+New Transformer.TX2 Buses=[PPU_DUMA_33kV, PPU_DUMA_11kV_B] Conns=[Delta Wye] kVs=[33 11.3] kVAs=[30000 30000] XHL=10
