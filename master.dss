@@ -4,11 +4,11 @@ New Object=Circuit.TNB_DUMA BasekV=33 pu=1.0 Angle=0 phases=3 bus1=PPU_DUMA_33kV
 
 ! ATTACHING transformer and lines files
 
-Redirect transformer.dss
-Redirect lines.dss
+// Redirect transformer.dss
+// Redirect lines.dss
 
-// Redirect tx_sectionalized.dss
-// Redirect lines_sectionalized.dss
+Redirect tx_sectionalized.dss
+Redirect lines_sectionalized.dss
 
 // Redirect tx_contingency.dss
 
@@ -26,8 +26,12 @@ Redirect peak_loads.dss
 // Redirect pv80pc.dss
 // Redirect pv100pc.dss
 
-Redirect pv_200pc.dss
-
+// Redirect pv120pc.dss
+// Redirect pv140pc.dss
+// Redirect pv160pc.dss
+// Redirect pv180pc.dss
+// Redirect pv200pc.dss
+Redirect pvtestpc.dss
 
 
 // Set Voltagebases=[33 11.3]

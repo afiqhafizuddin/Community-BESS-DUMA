@@ -2,7 +2,7 @@
 New Loadshape.daily_load npts=2881  minterval=1 mult=(File=two_day_daily_load.txt)
 
 ! FEEDER 1 
-// New Object=Load.LOAD1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kW=85 kvar=366 PF=0.89
+New Object=Load.LOAD1 bus1=PPU_DUMA_VCB1 phases=3 kV=11 kW=85 kvar=366 PF=0.89
 
 ! FEEDER 2
 New Load.LOAD2 bus1=RPPLNGI2 phases=3 kV=11 kW=732 kvar=366 PF=0.89
@@ -29,7 +29,7 @@ New Load.LOAD14 bus1=PMONTB phases=3 kV=11 kW=718 kvar=359 PF=0.89
 New Load.LOAD15 bus1=DUMA7 phases=3 kV=11 kW=1110 kvar=555 PF=0.89
 New Load.LOAD16 bus1=HAUS phases=3 kV=11 kW=472 kvar=236 PF=0.89
 New Load.LOAD17 bus1=DUMA6 phases=3 kV=11 kW=472 kvar=236 PF=0.89
-New Load.LOAD18 bus1=DUMA13 phases=3 kV=11 kW=116 kvar=58 PF=0.89 ! Branch Node 
+// New Load.LOAD18 bus1=DUMA13 phases=3 kV=11 kW=116 kvar=58 PF=0.89 ! Branch Node 
 New Load.LOAD19 bus1=SSU_DUMA5_M11kV phases=3 kV=11 kW=472 kvar=236 PF=0.89
 
 
