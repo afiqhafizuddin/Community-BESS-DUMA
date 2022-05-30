@@ -18,7 +18,7 @@ opts.VariableNames = ["VarName1", "VarName2", "VarName3", "VarName4", "VarName5"
 opts.VariableTypes = ["double", "double", "double", "double", "double", "double", "double", "double", "double", "double"];
 
 % Import the data
-Alldata = readtable("(C:\Users\Afiq Hafizuddin\Documents\MATLAB\BESS-guide\Community_BESS\All_data.xlsx)", opts, "UseExcel", false);
+Alldata = readtable("(C:\Users\Afiq Hafizuddin\Documents\MATLAB\BESS-guide\01_Community_BESS\All_data.xlsx)", opts, "UseExcel", false);
 
 
 %% Clear temporary variables

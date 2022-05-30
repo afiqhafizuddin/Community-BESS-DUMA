@@ -1,9 +1,9 @@
 function [P_L,Q_L] = demandextraction(i,DSSObj,DSSText,DSSCircuit,DSSSolution)
 
-    % DSSCircuit.SetActiveElement('Load.LOAD1');
-    % S_L=DSSCircuit.ActiveElement.Powers; % obtained 1X8 matrix
-    % P_L(i,1)=1*(S_L(1)+S_L(3)+S_L(5));
-    % Q_L(i,1)=1*(S_L(2)+S_L(4)+S_L(6));;
+    DSSCircuit.SetActiveElement('Load.LOAD1');
+    S_L=DSSCircuit.ActiveElement.Powers; % obtained 1X8 matrix
+    P_L(i,1)=1*(S_L(1)+S_L(3)+S_L(5));
+    Q_L(i,1)=1*(S_L(2)+S_L(4)+S_L(6));;
     
     DSSCircuit.SetActiveElement('Load.LOAD2');
     S_L=DSSCircuit.ActiveElement.Powers; % obtained 1X8 matrix
