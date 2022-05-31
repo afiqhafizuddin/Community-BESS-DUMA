@@ -2,17 +2,17 @@ clc
 clear all
 close all;
 
-% Loading daily load pattern
-% fileID = fopen('two_day_daily_load_commercial.txt','r');
-% formatSpec = '%f';
-% Loadshape_data1 = fscanf(fileID,formatSpec);
-% LS = length(Loadshape_data1);
-
-% Loading daily load pattern (residential)
-fileID = fopen('two_day_daily_load_residential.txt','r');
+% % Loading daily load pattern
+fileID = fopen('two_day_daily_load_commercial.txt','r');
 formatSpec = '%f';
 Loadshape_data = fscanf(fileID,formatSpec);
 LS = length(Loadshape_data);
+
+% Loading daily load pattern (residential)
+% fileID = fopen('two_day_daily_load_residential.txt','r');
+% formatSpec = '%f';
+% Loadshape_data = fscanf(fileID,formatSpec);
+% LS = length(Loadshape_data);
 
 
 % Loading daily solar pattern
